@@ -36,6 +36,7 @@ class ContactDetailViewController: UIViewController {
             ContactController.shared.updateContact(contact, name: name, phone: phone, email: email) { success in
                 if success {
                     print("Contact Updated")
+                    self.dismiss()
                 }
             }
         }else {
@@ -45,7 +46,7 @@ class ContactDetailViewController: UIViewController {
                 }
             }
         }
-        navigationController?.popViewController(animated: true)
+//        navigationController?.popViewController(animated: true)
     }
     
     //MARK: - Helper Methods
@@ -58,7 +59,7 @@ class ContactDetailViewController: UIViewController {
     
     func dismiss() {
         DispatchQueue.main.async {
-            self.dismiss(animated: true, completion: nil)
+            self.navigationController?.popViewController(animated: true)
         }
     }
     

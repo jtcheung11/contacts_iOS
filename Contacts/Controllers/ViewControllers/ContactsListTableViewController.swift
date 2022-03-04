@@ -9,14 +9,6 @@ import UIKit
 
 class ContactsListTableViewController: UITableViewController {
 
-    //MARK: - Properties
-    var contact: Contact? {
-        didSet{
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        }
-    }
     
     //MARK: - Lifecycle Methods
     override func viewDidLoad() {
